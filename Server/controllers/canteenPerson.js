@@ -25,7 +25,7 @@ function canteenPerson(Order) {
         client.messages.create({
             body: a,
             from: twillioNumber,
-            to: "+919821079400",
+            to: process.env.CANTEEN,
         }).then().catch((err) => console.log(err))
 
     });

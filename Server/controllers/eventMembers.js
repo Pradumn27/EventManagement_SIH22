@@ -9,8 +9,8 @@ var transport = nodemailer.createTransport(
     {
         service: "gmail",
         auth: {
-            user: "28pradumn@gmail.com",
-            pass: "criminalcase"
+            user: process.env.EMAIL,
+            pass: process.env.PASSWORD,
         }
     }
 )
@@ -28,7 +28,7 @@ function eventMember(Order) {
             }).then().catch((err) => console.log(err));
 
             var mailOptions = {
-                from: "28pradumn@gmail.com",
+                from: process.env.EMAIL,
                 to: doc.email,
                 subject: `AICTE Event : ${Order.eventName}`,
                 text: `Hello ${doc.username}!! The ${Order.eventName} is being organized on ${Order.bookingDate} at ${Order.bookingVenue} you have been assigned the role for ${person.roleAssigned} .Please check your duties on the portal.`
