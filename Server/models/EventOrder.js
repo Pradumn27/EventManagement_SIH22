@@ -8,8 +8,7 @@ const EventOrderSchema = new mongoose.Schema(
         bookingVenue: { type: String, required: true },
         peopleInvolved: [
             {
-                userName: { type: String },
-                roleAssigned: { type: String },
+                userName: { type: String }
             }
         ]
     },

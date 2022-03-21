@@ -7,6 +7,8 @@ const User = require("../models/User");
 router.post("/register", async (req, res) => {
 
     const newUser = new User({
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
         username: req.body.username,
         email: req.body.email,
         phone: req.body.phone,
@@ -32,37 +34,31 @@ router.post('/login', async (req, res) => {
     try {
         const user = await User.findOne(
             {
-                userName: req.body.user_name
+                email: req.body.email
             }
         );
 
-        !user && res.status(401).json("Wrong User Name");
+        if (!user) {
+            res.status(401).json("Wrong Email");
+        }
+        else {
+            const hashedPassword = CryptoJS.AES.decrypt(
+                user.password,
+                process.env.PASS_SEC
+            );
 
-        const hashedPassword = CryptoJS.AES.decrypt(
-            user.password,
-            process.env.PASS_SEC
-        );
 
+            const originalPassword = hashedPassword.toString(CryptoJS.enc.Utf8);
 
-        const originalPassword = hashedPassword.toString(CryptoJS.enc.Utf8);
+            const inputPassword = req.body.password;
 
-        const inputPassword = req.body.password;
-
-        originalPassword != inputPassword &&
-            res.status(401).json("Wrong Password");
-
-        const accessToken = jwt.sign(
-            {
-                id: user._id,
-                isAdmin: user.isAdmin,
-            },
-            process.env.JWT_SEC,
-            { expiresIn: "3d" }
-        );
-
-        const { password, ...others } = user._doc;
-        res.status(200).json({ ...others, accessToken });
-
+            if (originalPassword != inputPassword) {
+                res.status(401).json("Wrong Password");
+            }
+            else {
+                res.status(200).json(user);
+            }
+        }
     } catch (err) {
         res.status(500).json(err);
     }

@@ -19,6 +19,7 @@
     "mongoose": "^6.2.6",
     "nodemailer": "^6.7.2",
     "nodemon": "^2.0.15",
+    "social-post-api": "^1.0.20",
     "twilio": "^3.75.1"
   }
 }

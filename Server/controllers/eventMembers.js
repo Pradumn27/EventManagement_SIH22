@@ -17,8 +17,8 @@ var transport = nodemailer.createTransport(
 
 function eventMember(Order) {
     Order.peopleInvolved.forEach(person => {
+        console.log(person)
         User.findOne({ "username": person.userName }, function (_, doc) {
-
             let phone = "+91" + doc.phone;
 
             client.messages.create({

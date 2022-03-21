@@ -1,10 +1,11 @@
 const router = require("express").Router();
 const eventMember = require("../controllers/eventMembers");
 const EventOrder = require("../models/EventOrder");
+const Event = require("../models/Event")
 
 router.post("/", async (req, res) => {
 
-    const Event = new EventOrder({
+    const Evente = new EventOrder({
         creatorName: req.body.creatorName,
         eventName: req.body.eventName,
         bookingDate: req.body.bookingDate,
@@ -12,8 +13,15 @@ router.post("/", async (req, res) => {
         peopleInvolved: req.body.peopleInvolved,
     })
 
+    const Events = new Event({
+        eventName: req.body.eventName,
+        eventDate: req.body.bookingDate,
+        eventVenue: req.body.bookingVenue
+    })
+
     try {
-        const savedOrder = await Event.save();
+        const savedOrder = await Evente.save();
+        const saveOrder = await Events.save();
         eventMember(savedOrder);
         res.status(201).json(savedOrder);
     } catch (err) {

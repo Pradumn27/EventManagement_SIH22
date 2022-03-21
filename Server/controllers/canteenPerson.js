@@ -19,13 +19,18 @@ function canteenPerson(Order) {
         a += `
         Contact ${doc.username} ${doc.phone}`;
 
-
-        console.log(a);
+        let b = `Your Canteen Order is placed. For further Queries please contact on +919821079400`
 
         client.messages.create({
             body: a,
             from: twillioNumber,
-            to: process.env.CANTEEN,
+            to: doc.phone,
+        }).then().catch((err) => console.log(err))
+
+        client.messages.create({
+            body: b,
+            from: twillioNumber,
+            to: "+919821079400",
         }).then().catch((err) => console.log(err))
 
     });

@@ -1,0 +1,68 @@
+.member {
+  display: flex;
+  justify-content: space-between;
+  margin: 2%;
+}
+
+.right-event {
+  background: #599fd9;
+  background-image: linear-gradient(
+    135.9deg,
+    rgba(109, 25, 252, 1) 16.4%,
+    rgba(125, 31, 165, 1) 56.1%
+  );
+  min-height: 100vh;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.event-link {
+  margin-top: 80%;
+  margin: 20%;
+  font-size: 2rem;
+  height: 10%;
+  width: 10%;
+  border: 1px solid black;
+  background: rgba(125, 31, 165, 1) 56.1%;
+}
+
+.form {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(131, 95, 173);
+}
+
+.form-div {
+  font-size: 3rem;
+  position: absolute;
+  height: fit-content;
+  width: fit-content;
+  margin: 2%;
+  cursor: pointer;
+}
+
+.eve {
+  height: 80%;
+  width: 40%;
+  background-color: #689bc5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Event-heading {
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin: 3% 0%;
+  text-decoration: underline;
+}
+
+.Event-buttons {
+  margin: 3% 0%;
+  display: flex;
+  justify-content: center;
+}

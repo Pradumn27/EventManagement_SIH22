@@ -1,0 +1,12 @@
+.order-confirmed {
+  display: flex;
+  height: 80vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  font-weight: bolder;
+  font-size: 2rem;
+}
+.order-confirmed h1 {
+  text-align: center;
+}

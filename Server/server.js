@@ -9,6 +9,8 @@ const menu = require("./routes/menu");
 const memberList = require("./routes/memberList");
 const eventOrder = require("./routes/eventOrder");
 const canteenOrder = require("./routes/canteenOrder");
+const post = require("./routes/post");
+const upcomingEvents = require("./routes/upcomingEvents.js")
 
 dotenv.config();
 
@@ -30,5 +32,7 @@ app.use("/api/menu", menu);
 app.use("/api/members", memberList);
 app.use("/api/eventOrder", eventOrder);
 app.use("/api/canteenOrder", canteenOrder);
+app.use("/api/post", post);
+app.use("/api/upcomingEvents", upcomingEvents);
 
 server.listen(process.env.PORT || 5001, () => console.log(`Server has started.`));
