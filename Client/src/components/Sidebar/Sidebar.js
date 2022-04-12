@@ -5,7 +5,7 @@ import { actionTypes } from "../../StateReducer/Reducer"
 
 function Sidebar({ active }) {
 
-    const [{ user }, dispath] = useStateValue();
+    const [{ user }, dispatch] = useStateValue();
     const navigate = useNavigate();
     const handleClick = () => {
         dispatch({

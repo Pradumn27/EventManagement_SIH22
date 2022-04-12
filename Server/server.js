@@ -14,7 +14,7 @@ const upcomingEvents = require("./routes/upcomingEvents.js")
 
 dotenv.config();
 
-mongoose.connect(process.env.MONGO_URL).then(() => {
+mongoose.connect("mongodb+srv://Ankita:dRpBqQ3iHXOOSawE@cluster0.kef1c.mongodb.net/EventManager?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
     console.log("Database connected");
 }).catch(err => {
     console.log(err)

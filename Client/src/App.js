@@ -28,10 +28,10 @@ function App() {
                 <Route exact path="/menu/dinner" element={<Dinner />} />
                 <Route exact path="/event" element={<Event />} />
                 <Route exact path="/roles" element={<Roles />} />
-                <Route exact path="/upcomingEvents" element={<UpcomingEvents />} />
                 <Route exact path="/eventForm" element={<EventForm />} />
                 <Route exact path="/menu/dinner" element={<Dinner />} />
                 <Route exact path="/order-confirmed" element={<OrderConfirmed />} />
+                <Route exact path="/upcomingEvents" element={<UpcomingEvents />} />
                 <Route exact path="/socials" element={<Socials />} />
             </Routes>
         </BrowserRouter>

@@ -9,7 +9,8 @@
 }
 
 .form-container {
-  width: 360px;
+  width: 40%;
+  height: 50%;
   background-color: white;
   margin: auto;
   border-radius: 6%;
@@ -25,6 +26,8 @@
 }
 .register-form h3 {
   text-align: center;
+  text-decoration: underline;
+  color: #ffa4a4;
 }
 .success-message {
   font-family: "Roboto", sans-serif;
@@ -37,9 +40,15 @@
   margin: 10px 0 10px 0;
   padding: 15px;
   font-size: 16px;
-  border: 0;
+  border: 1px solid black;
   font-family: "Roboto", sans-serif;
   cursor: pointer;
+  text-align: center;
+  background-color: #4caf50;
+}
+
+.form-field:hover {
+  background-color: #36b33a;
 }
 
 .register-form span {
